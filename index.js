@@ -1,7 +1,7 @@
 exports.handler = async (event) => {
     const response = {
         statusCode: 200,
-        body: JSON.stringify('Hello from Dockerized Lambda!'),
+        body: JSON.stringify('Hello from Dockerized Lambda!@'),
     };
     return response;
 };
