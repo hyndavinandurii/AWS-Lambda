@@ -1,5 +1,10 @@
-FROM public.ecr.aws/lambda/nodejs:16
+FROM node:14
 
-COPY index.js ${LAMBDA_TASK_ROOT}
-  
-CMD [ "index.handler" ]
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+CMD ["node", "index.js"]
