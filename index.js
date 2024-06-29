@@ -1,6 +1,10 @@
-exports.handler = async (event) => {
-    return {
-        statusCode: 200,
-        body: JSON.stringify('Hello from Lambda!'),
-    };
-};
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello from Dockerized Lambda!');
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
